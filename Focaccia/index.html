@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TONY | Focaccias de Autor</title>
+    <!-- Tipografías -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <style>
+        /* SCROLL SUAVE PARA LA NAVEGACIÓN */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* PALETA DE COLORES */
+        :root {
+            --champagne-pink: #F3E1D1;
+            --black-olive: #39433A;
+            --cg-red: #E73C32;
+            --chinese-blue: #4152A0;
+            --carrot-orange: #F28F22;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--champagne-pink);
+            color: var(--black-olive);
+            font-family: 'Nunito', sans-serif;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Familjen Grotesk', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .accent-font {
+            font-family: 'Caveat', cursive;
+            color: var(--cg-red);
+            font-size: 2.5rem;
+            transform: rotate(-5deg);
+            display: inline-block;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: var(--champagne-pink);
+            border-bottom: 2px solid var(--black-olive);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Familjen Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--cg-red);
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: var(--black-olive);
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--cg-red);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            display: flex;
+            align-items: center;
+            padding: 60px 50px;
+            gap: 40px;
+            background-color: var(--chinese-blue);
+            color: white;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            color: var(--champagne-pink);
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background-color: var(--cg-red);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-family: 'Familjen Grotesk', sans-serif;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            display: inline-block;
+            transition: transform 0.2s ease, background-color 0.2s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background-color: #c93027;
+        }
+
+        .hero-image {
+            flex: 1;
+            background-color: transparent;
+            height: 400px;
+            background-image: url('hero.jpg'); /* Asegúrate de tener tu imagen hero guardada */
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            box-shadow: -15px 15px 0px var(--carrot-orange);
+        }
+
+        /* BANNER NUEVO PRODUCTO */
+        .teaser-banner {
+            background-color: var(--cg-red);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-family: 'Familjen Grotesk', sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+
+        /* SECCIÓN ESTRELLAS (MENÚ) */
+        .menu-estrellas {
+            padding: 80px 50px;
+            text-align: center;
+        }
+
+        .menu-estrellas h2 {
+            font-size: 2.5rem;
+            color: var(--chinese-blue);
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            flex: 1;
+            border: 3px solid var(--black-olive);
+            border-radius: 10px;
+            box-shadow: 8px 8px 0px var(--black-olive);
+            text-align: center; /* Texto centrado */
+        }
+
+        /* ESTILO PARA LAS IMÁGENES DE LAS TARJETAS */
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            object-position: center center; /* Imagen centrada dentro del marco */
+            border-radius: 5px;
+            margin-bottom: 15px;
+            border: 2px solid var(--black-olive);
+        }
+
+        .card h3 {
+            color: var(--cg-red);
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--black-olive);
+            line-height: 1.5;
+        }
+
+        /* FAQ SECTION */
+        .faq-section {
+            background-color: white;
+            padding: 80px 50px;
+            border-top: 3px dashed var(--black-olive);
+            border-bottom: 3px dashed var(--black-olive);
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        details {
+            background-color: var(--champagne-pink);
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px solid var(--black-olive);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        details:hover {
+            background-color: #f7ede3;
+        }
+
+        summary {
+            font-family: 'Familjen Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: bold;
+            outline: none;
+        }
+
+        details p {
+            margin-top: 10px;
+            font-size: 1.1rem;
+            color: var(--black-olive);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--black-olive);
+            color: var(--champagne-pink);
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer h2 {
+            color: var(--cg-red);
+            font-size: 3rem;
+            margin: 0 0 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="teaser-banner">
+         ALGO NUEVO SE ESTÁ HORNEANDO... PRÓXIMAMENTE 
+    </div>
+
+    <header id="inicio">
+        <div class="logo">TONY</div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#menu">Nuestras Focaccias</a>
+            <a href="#faq">Dudas Frecuentes</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <span class="accent-font" style="color: var(--carrot-orange);">Cocina de Autor</span>
+            <h1>Fuera de lo ordinario.</h1>
+            <p>Hacemos cada componente de nuestras focaccias nosotros mismos (a excepción del queso). No es solo pan, es una obra de arte culinaria diseñada para sorprenderte.</p>
+            <a href="#menu" class="btn">VER MENÚ ESTRELLA</a>
+        </div>
+        <div class="hero-image"></div>
+    </section>
+
+    <!-- SECCIÓN DE MENÚ CON IMÁGENES LOCALES -->
+    <section id="menu" class="menu-estrellas">
+        <h2>Nuestras Focaccias Estrella</h2>
+        <p>Las favoritas de la casa, elaboradas con ingredientes frescos y recetas únicas.</p>
+        <div class="cards-container">
+            
+            <div class="card">
+                <img src="stracciatella.jpg" alt="Focaccia Stracciatella">
+                <h3>Stracciatella</h3>
+                <p>Nuestra creación más cremosa y solicitada. Un equilibrio perfecto de sabores.</p>
+            </div>
+            
+            <div class="card">
+                <img src="pinapicante.jpg" alt="Focaccia Piña Picante">
+                <h3 style="color: var(--chinese-blue);">Piña Picante</h3>
+                <p>Para los atrevidos. Un toque dulce y vibrante que despierta todos los sentidos.</p>
+            </div>
+            
+            <div class="card">
+                <img src="pestorosso.jpg" alt="Focaccia Pesto Rosso">
+                <h3 style="color: var(--carrot-orange);">Pesto Rosso</h3>
+                <p>El sabor profundo de Italia con nuestro pesto rojo de la casa.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <h2>Resolvemos tus Dudas</h2>
+        
+        <details>
+            <summary>¿De qué tamaño son las focaccias y para cuántas personas rinden?</summary>
+            <p>Nuestras focaccias tienen una medida estándar de [Insertar Medida]. Son ideales para compartir entre [Insertar Número] personas o para una comida abundante individual.</p>
+        </details>
+
+        <details>
+            <summary>¿Cuáles son las zonas de entrega y horarios?</summary>
+            <p>Realizamos envíos en Maracaibo a través de nuestro servicio de delivery. Trabajamos de [Día] a [Día] en el horario de [Hora] a [Hora]. Consúltanos si tu zona tiene cobertura.</p>
+        </details>
+
+        <details>
+            <summary>¿Tienen información sobre ingredientes y alérgenos?</summary>
+            <p>Sí. Al ser cocina de autor, preparamos nuestros ingredientes. Utilizamos harinas de trigo (contiene gluten). Si tienes alergia a los lácteos, frutos secos (como en nuestros pestos) u otros ingredientes, revisa el detalle de cada producto en el menú completo.</p>
+        </details>
+        
+        <details>
+            <summary>¿Dónde puedo retirar mi pedido (Pick-up)?</summary>
+            <p>Puedes retirar tu pedido recién salido del horno en nuestra ubicación: <strong>Avenida Santa Rita (8) con Avenida Universidad.</strong></p>
+        </details>
+    </section>
+
+    <footer>
+        <h2>TONY</h2>
+        <p><strong>Pick Up:</strong> Avenida Santa Rita (8) con Avenida Universidad | MCBO, VZLA</p>
+        <p class="accent-font" style="color: var(--carrot-orange); font-size: 2rem; margin-top: 15px;">@TONY.VE</p>
+    </footer>
+
+</body>
+</html>
