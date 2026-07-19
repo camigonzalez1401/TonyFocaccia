@@ -28,6 +28,8 @@
 
         * { box-sizing: border-box; }
 
+        html { -webkit-text-size-adjust: 100%; }
+
        body {
             margin: 0;
             padding: 0;
@@ -38,7 +40,11 @@
             color: var(--black-olive);
             font-family: 'Nunito', sans-serif;
             overflow-x: hidden;
-        } 
+            width: 100%;
+        }
+
+        /* IMÁGENES Y MEDIA FLUIDOS POR DEFECTO (evita desbordes en cualquier pantalla) */
+        img, svg { max-width: 100%; height: auto; }
 
         a { color: inherit; }
 
@@ -85,13 +91,24 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            flex-wrap: wrap;
             gap: 10px;
         }
 
         .logo { display: flex; align-items: center; max-height: 55px; }
 
         .img-logo { height: 70px !important; width: auto !important; display: block; }
+
+        /* BOTÓN HAMBURGUESA (oculto en escritorio) */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.6rem;
+            color: var(--cg-red);
+            cursor: pointer;
+            padding: 6px 8px;
+            line-height: 1;
+        }
 
         nav { display: flex; align-items: center; gap: 36px; flex-wrap: wrap; }
 
@@ -630,14 +647,122 @@
 
         .whatsapp-float:hover { transform: scale(1.1); background-color: #20ba5a; color: #FFF; }
 
-        @media (max-width: 800px) {
+        /* =========================================================
+           RESPONSIVE — TABLET GRANDE / LAPTOP PEQUEÑO (≤1024px)
+           ========================================================= */
+        @media (max-width: 1024px) {
+            header { padding: 10px 30px; }
+            .hero { padding: 60px 30px 20px 30px; }
+            .hero-image { height: 340px; }
+            .delivery-grid { gap: 25px; }
+            .grid-productos { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+        }
+
+        /* =========================================================
+           RESPONSIVE — TABLET / MÓVIL GRANDE (≤880px)
+           Aquí aparece el menú hamburguesa
+           ========================================================= */
+        @media (max-width: 880px) {
             header { padding: 10px 20px; }
-            .hero { padding: 50px 20px 20px 20px; }
-            .hero-text h1 { font-size: 2.4rem; }
-            .menu-estrellas, .seccion-productos, .faq-section, .seccion-delivery { padding: 50px 20px; }
+
+            .nav-toggle { display: block; }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                background-color: var(--champagne-pink);
+                box-shadow: 0 12px 20px rgba(0,0,0,0.12);
+                padding: 10px 0;
+            }
+
+            nav.nav-open { display: flex; }
+
+            nav a {
+                padding: 14px 24px;
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid rgba(57,67,58,0.1);
+            }
+
+            nav a::after { display: none; }
+
+            .nav-cta { border-radius: 0; margin: 6px 24px; width: auto; }
+
+            .hero { padding: 40px 20px 20px 20px; flex-direction: column; }
+            .hero-text, .hero-image { min-width: 100%; }
+            .hero-image { order: -1; height: 320px; }
+            .hero-text p { max-width: 100%; }
+            .btn-row { width: 100%; }
+            .btn-row .btn, .btn-row .btn-outline { flex: 1 1 auto; text-align: center; }
+
+            .menu-estrellas, .seccion-productos, .faq-section, .seccion-delivery, .manifiesto { padding: 50px 20px; }
             .delivery-grid { grid-template-columns: 1fr; }
             .card.central { margin-left: 0; margin-right: 0; }
             .cards-container { gap: 30px; }
+            .footer-grid { justify-content: center; text-align: center; gap: 35px; }
+            .footer-social { justify-content: center; }
+        }
+
+        /* =========================================================
+           RESPONSIVE — MÓVIL (≤600px)
+           ========================================================= */
+        @media (max-width: 600px) {
+            .img-logo { height: 50px !important; }
+            .hero-text h1 { font-size: clamp(2rem, 8vw, 2.6rem); }
+            .accent-font { font-size: 1.8rem; }
+            .hero-image { height: 260px; }
+            .hero-image .accent-font { font-size: 1.2rem; top: 12px; left: 12px; }
+
+            .btn-row { flex-direction: column; }
+
+            .manifiesto p.lead { font-size: 1.1rem; }
+            .valores-pills { gap: 10px; }
+            .valor-pill { font-size: 0.8rem; padding: 8px 16px; }
+
+            .menu-estrellas h2, .seccion-productos h2, .faq-section h2, .seccion-delivery h2 { font-size: 1.8rem; }
+
+            /* Ocultamos dos ingredientes flotantes para no saturar la pantalla pequeña */
+            .fl-3, .fl-4 { display: none; }
+
+            .cards-container { margin-top: 40px; }
+            .card { flex: 0 1 100%; max-width: 260px; }
+            .card.central { flex: 0 1 100%; max-width: 280px; }
+
+            .grid-productos { grid-template-columns: 1fr; }
+
+            .delivery-card { padding: 22px; }
+            .horario-tabla td, .horario-tabla th { font-size: 0.88rem; }
+
+            .leyenda-alergenos { gap: 14px; padding: 14px 18px; }
+
+            .footer-grid { flex-direction: column; align-items: center; gap: 25px; }
+            .footer-col { text-align: center; }
+            .footer-col p, .footer-col a { text-align: center; }
+
+            .whatsapp-float { width: 52px; height: 52px; font-size: 24px; bottom: 18px; right: 18px; }
+        }
+
+        /* =========================================================
+           RESPONSIVE — MÓVIL PEQUEÑO (≤400px)
+           ========================================================= */
+        @media (max-width: 400px) {
+            .hero-text h1 { font-size: 1.8rem; letter-spacing: 1px; }
+            .hero-image { height: 220px; box-shadow: -8px 8px 0px var(--carrot-orange); }
+            .btn { padding: 13px 20px; font-size: 1rem; }
+            .header-producto { flex-wrap: wrap; }
+            nav a { font-size: 0.85rem; }
+        }
+
+        /* Respeta preferencia de reducción de movimiento */
+        @media (prefers-reduced-motion: reduce) {
+            .cinta-track, .floating-ingredient { animation: none !important; }
+            html { scroll-behavior: auto; }
         }
     </style>
 </head>
@@ -647,7 +772,10 @@
         <div class="logo">
             <img src="IMG_4110.PNG" alt="TONY Focaccias de Autor" class="img-logo">
         </div>
-        <nav>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navPrincipal">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav id="navPrincipal">
             <a href="#inicio">Inicio</a>
             <a href="#menu">Favoritos</a>
             <a href="#delivery">Delivery y Horarios</a>
@@ -675,7 +803,7 @@
             </div>
             <div class="hero-image">
                 <span class="accent-font">Recién horneado</span>
-                <img src="pina picante.png" alt="Focaccia Piña Picante de TONY">
+                <img src="pina_picante.png" alt="Focaccia Piña Picante de TONY">
             </div>
         </section>
     </div>
@@ -728,14 +856,14 @@
 
             <!-- TARJETA CENTRAL (ADELANTE) -->
             <div class="card central">
-                <img src="pina picante.png" alt="Focaccia Piña Picante">
+                <img src="pina_picante.png" alt="Focaccia Piña Picante">
                 <h3 style="color: var(--chinese-blue);">Piña Picante</h3>
                 <p>Para los atrevidos. Un toque dulce y vibrante.</p>
             </div>
 
             <!-- TARJETA DERECHA (ATRÁS) -->
             <div class="card">
-                <img src="pesto rosso.png" alt="Focaccia Pesto Rosso">
+                <img src="pesto_rosso.png" alt="Focaccia Pesto Rosso">
                 <h3 style="color: var(--champagne-pink);">Pesto Rosso</h3>
                 <p>El sabor profundo de Italia con nuestro pesto rojo.</p>
             </div>
@@ -984,6 +1112,28 @@
     <a href="https://wa.me/TU_NUMERO_AQUI?text=¡Hola!%20Quiero%20ordenar%20una%20focaccia%20de%20TONY%20🍕" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
+
+    <!-- MENÚ MÓVIL: abre/cierra y se cierra al elegir una opción -->
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const navPrincipal = document.getElementById('navPrincipal');
+
+        navToggle.addEventListener('click', () => {
+            const abierto = navPrincipal.classList.toggle('nav-open');
+            navToggle.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+            navToggle.innerHTML = abierto
+                ? '<i class="fa-solid fa-xmark"></i>'
+                : '<i class="fa-solid fa-bars"></i>';
+        });
+
+        navPrincipal.querySelectorAll('a').forEach(enlace => {
+            enlace.addEventListener('click', () => {
+                navPrincipal.classList.remove('nav-open');
+                navToggle.setAttribute('aria-expanded', 'false');
+                navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            });
+        });
+    </script>
 
 </body>
 </html>
