@@ -4,8 +4,11 @@ html { scroll-behavior: smooth; }
 /* AJUSTE DE SCROLL PARA QUE EL HEADER STICKY NO TAPE EL INICIO DE CADA SECCIÓN
    (así cada sección queda bien encuadrada/centrada al navegar desde el menú,
    sin ver el borde de la sección anterior o siguiente) */
-#inicio, #menu, #delivery, #productos, #faq {
+#menu, #delivery, #productos, #faq {
     scroll-margin-top: 100px;
+}
+#top {
+    scroll-margin-top: 0;
 }
 
 /* PALETA DE COLORES OFICIAL — MANUAL DE MARCA TONY 2025 */
