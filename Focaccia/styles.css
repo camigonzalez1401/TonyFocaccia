@@ -1,9 +1,6 @@
-/* SCROLL SUAVE PARA LA NAVEGACIÓN */
+
 html { scroll-behavior: smooth; }
 
-/* AJUSTE DE SCROLL PARA QUE EL HEADER STICKY NO TAPE EL INICIO DE CADA SECCIÓN
-   (así cada sección queda bien encuadrada/centrada al navegar desde el menú,
-   sin ver el borde de la sección anterior o siguiente) */
 #menu, #delivery, #productos, #faq {
     scroll-margin-top: 100px;
 }
@@ -11,7 +8,7 @@ html { scroll-behavior: smooth; }
     scroll-margin-top: 0;
 }
 
-/* PALETA DE COLORES OFICIAL — MANUAL DE MARCA TONY 2025 */
+/* PALETA DE COLORES OFICIAL  */
 :root {
     --champagne-pink: #F3E1D1;
     --black-olive: #39433A;
@@ -38,12 +35,10 @@ html { -webkit-text-size-adjust: 100%; }
     width: 100%;
 }
 
-/* IMÁGENES Y MEDIA FLUIDOS POR DEFECTO (evita desbordes en cualquier pantalla) */
 img, svg { max-width: 100%; height: auto; }
 
 a { color: inherit; }
 
-/* TÍTULOS GENERALES */
 h1, h2, h3 {
     font-family: 'Familjen Grotesk', sans-serif;
     text-transform: uppercase;
@@ -93,7 +88,6 @@ header {
 
 .img-logo { height: 70px !important; width: auto !important; display: block; }
 
-/* BOTÓN HAMBURGUESA (oculto en escritorio) */
 .nav-toggle {
     display: none;
     background: none;
@@ -139,7 +133,6 @@ nav a:hover::after { width: 100%; }
 }
 .nav-cta::after { display: none; }
 
-/* HERO CONTAINER CON CORTE ANGULAR INTERNO — FONDO DE FOCACCIA ARTESANAL */
 .hero-container {
     background-image: linear-gradient(rgba(38, 30, 20, 0.62), rgba(38, 30, 20, 0.62)), url('https://images.unsplash.com/photo-1619452357216-e88ca8119eeb?q=80&w=1600&auto=format&fit=crop');
     background-size: cover;
@@ -261,7 +254,7 @@ nav a:hover::after { width: 100%; }
     100% { transform: translateX(-50%); }
 }
 
-/* SECCIÓN MANIFIESTO / QUIÉNES SOMOS */
+
 .manifiesto {
     position: relative;
     padding: 30px 50px 70px 50px;
@@ -269,14 +262,14 @@ nav a:hover::after { width: 100%; }
 }
 
 .manifiesto .eyebrow {
-    font-size: 1.1rem; /* Ajusta este valor a tu gusto */
+    font-size: 1.1rem; 
     font-weight: 600;   
 }
 
 .manifiesto p.lead {
     max-width: 720px;
     margin: 20px auto 30px auto;
-    font-size: 1.45rem; /* 2. Modifica este valor para cambiar el párrafo principal */
+    font-size: 1.45rem;
     line-height: 1.6;
 }
 
@@ -295,11 +288,10 @@ nav a:hover::after { width: 100%; }
     font-family: 'Familjen Grotesk', sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
-    font-size: 0.95rem; /* 3. Modifica este valor para cambiar el tamaño de las pastillas */
+    font-size: 0.95rem; 
     text-transform: uppercase;
 }
 
-/* SECCIÓN ESTRELLAS (MENÚ) */
 .menu-estrellas {
     position: relative;
     padding: 0px 50px 110px 50px;
@@ -356,7 +348,7 @@ nav a:hover::after { width: 100%; }
 .card h3 { color: var(--cg-red); font-size: 1.6rem; margin-top: 0; margin-bottom: 5px; letter-spacing: 2px; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
 .card p { margin: 0; color: var(--black-olive); line-height: 1.4; font-size: 1.05rem; padding: 0 20px; }
 
-/* IMÁGENES FLOTANTES EN EL MENÚ */
+
 .floating-ingredient {
     position: absolute;
     pointer-events: none;
@@ -378,27 +370,8 @@ nav a:hover::after { width: 100%; }
 .fl-3 { width: 70px; height: auto; top: 25%; right: 8%; animation-duration: 20s; animation-delay: -5s; }
 .fl-4 { width: 90px; height: auto; top: 75%; right: 12%; animation-duration: 16s; animation-delay: -8s; }
 
-/* STICKERS DECORATIVOS REPARTIDOS POR TODA LA PÁGINA */
-.pagina-sticker {
-    position: absolute;
-    pointer-events: none;
-    z-index: 6;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
-}
 
-.sticker-hero-1   { width: 62px; top: 110px; right: 6%;  transform: rotate(9deg); }
-.sticker-hero-2   { width: 68px; bottom: 130px; left: 4%; transform: rotate(-8deg); }
-.sticker-manifiesto-1 { width: 60px; top: 5px; left: 3%; transform: rotate(-10deg); }
-.sticker-manifiesto-2 { width: 56px; top: 15px; right: 4%; transform: rotate(7deg); }
-.sticker-menu-1   { width: 64px; top: 10px; left: 6%; transform: rotate(6deg); }
-.sticker-delivery-1 { width: 78px; top: 25px; left: 5%; transform: rotate(-4deg); }
-.sticker-delivery-2 { width: 55px; bottom: 25px; right: 6%; transform: rotate(10deg); }
-.sticker-productos-1 { width: 70px; top: 20px; left: 4%; transform: rotate(8deg); }
-.sticker-productos-2 { width: 62px; bottom: 20px; right: 5%; transform: rotate(-7deg); }
-.sticker-faq-1    { width: 66px; top: 10px; right: 4%; transform: rotate(-6deg); }
-.sticker-footer-1 { width: 50px; top: 15px; left: 6%; transform: rotate(6deg); }
 
-/* SECCIÓN: ZONAS DE ENTREGA Y HORARIOS */
 .seccion-delivery {
     background-color: var(--black-olive);
     color: var(--champagne-pink);
@@ -457,7 +430,7 @@ nav a:hover::after { width: 100%; }
 
 .delivery-cta { text-align: center; margin-top: 45px; }
 
-/* SECCIÓN: MENÚ COMPLETO */
+
 .seccion-productos { background-color: rgba(242, 143, 34, 0.92); padding: 80px 50px; text-align: center; position: relative; overflow: hidden; }
 .seccion-productos h2 { font-size: 2.5rem; color: white; margin-bottom: 15px; }
 .seccion-productos .section-intro { color: white; opacity: 0.95; }
@@ -616,7 +589,7 @@ footer { background-color: var(--black-olive); color: var(--champagne-pink); tex
 
 .footer-divider { border: none; border-top: 1px solid rgba(243,225,209,0.15); max-width: 900px; margin: 0 auto 25px auto; }
 
-/* CONTENEDOR Y TAMAÑO DEL SELLO EN EL FOOTER */
+
 .footer-sello-container {
     display: flex;
     justify-content: center;
@@ -624,7 +597,7 @@ footer { background-color: var(--black-olive); color: var(--champagne-pink); tex
 }
 
 .img-sello-footer {
-    max-width: 100px; /* 👈 Cambia este valor para ajustar el tamaño general (ej: 80px, 100px, 120px) */
+    max-width: 100px; 
     height: auto;
     object-fit: contain;
 }
@@ -632,11 +605,11 @@ footer { background-color: var(--black-olive); color: var(--champagne-pink); tex
 /* TAMAÑO PARA MÓVILES */
 @media (max-width: 600px) {
     .img-sello-footer {
-        max-width: 80px; /* 👈 Tamaño aún más reducido en pantallas móviles */
+        max-width: 80px; 
     }
 }
 
-/* BOTÓN FLOTANTE DE WHATSAPP */
+/* BOTÓN WHATSAPP */
 .whatsapp-float {
     position: fixed;
     bottom: 30px;
@@ -659,9 +632,7 @@ footer { background-color: var(--black-olive); color: var(--champagne-pink); tex
 
 .whatsapp-float:hover { transform: scale(1.1); background-color: #20ba5a; color: #FFF; }
 
-/* =========================================================
-   RESPONSIVE — TABLET GRANDE / LAPTOP PEQUEÑO (≤1024px)
-   ========================================================= */
+
 @media (max-width: 1024px) {
     header { padding: 10px 30px; }
     .hero { padding: 60px 30px 20px 30px; }
@@ -669,10 +640,7 @@ footer { background-color: var(--black-olive); color: var(--champagne-pink); tex
     .grid-productos { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
 }
 
-/* =========================================================
-   RESPONSIVE — TABLET / MÓVIL GRANDE (≤880px)
-   Aquí aparece el menú hamburguesa
-   ========================================================= */
+
 @media (max-width: 880px) {
     header { padding: 10px 20px; }
 
@@ -720,9 +688,7 @@ footer { background-color: var(--black-olive); color: var(--champagne-pink); tex
     .footer-social { justify-content: center; }
 }
 
-/* =========================================================
-   RESPONSIVE — MÓVIL (≤600px)
-   ========================================================= */
+
 @media (max-width: 600px) {
     .img-logo { height: 50px !important; }
     #inicio, #menu, #delivery, #productos, #faq { scroll-margin-top: 80px; }
@@ -762,9 +728,7 @@ footer { background-color: var(--black-olive); color: var(--champagne-pink); tex
     .whatsapp-float { width: 52px; height: 52px; font-size: 24px; bottom: 18px; right: 18px; }
 }
 
-/* =========================================================
-   RESPONSIVE — MÓVIL PEQUEÑO (≤400px)
-   ========================================================= */
+
 @media (max-width: 400px) {
     .hero-text h1 { font-size: 1.8rem; letter-spacing: 1px; }
     .btn { padding: 13px 20px; font-size: 1rem; }
@@ -772,7 +736,7 @@ footer { background-color: var(--black-olive); color: var(--champagne-pink); tex
     nav a { font-size: 0.85rem; }
 }
 
-/* Respeta preferencia de reducción de movimiento */
+
 @media (prefers-reduced-motion: reduce) {
     .cinta-track, .floating-ingredient { animation: none !important; }
     html { scroll-behavior: auto; }
