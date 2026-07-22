@@ -299,7 +299,7 @@ nav a:hover::after { width: 100%; }
 /* SECCIÓN ESTRELLAS (MENÚ) */
 .menu-estrellas {
     position: relative;
-    padding: 30px 50px 110px 50px;
+    padding: 0px 50px 110px 50px;
     text-align: center;
     background-color: transparent;
 }
@@ -312,7 +312,7 @@ nav a:hover::after { width: 100%; }
     justify-content: center;
     align-items: flex-end;
     gap: 0;
-    margin-top: 70px;
+    margin-top: 30px;
     position: relative;
     z-index: 10;
     perspective: 1000px;
@@ -605,12 +605,33 @@ footer { background-color: var(--black-olive); color: var(--champagne-pink); tex
     margin-bottom: 12px;
 }
 
+
 .footer-col p, .footer-col a { font-size: 0.9rem; line-height: 1.7; text-decoration: none; color: var(--champagne-pink); display: block; }
 .footer-social { display: flex; gap: 14px; margin-top: 10px; }
 .footer-social a { font-size: 1.3rem; }
 .footer-social a:hover { color: var(--carrot-orange); }
 
 .footer-divider { border: none; border-top: 1px solid rgba(243,225,209,0.15); max-width: 900px; margin: 0 auto 25px auto; }
+
+/* CONTENEDOR Y TAMAÑO DEL SELLO EN EL FOOTER */
+.footer-sello-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 10px 0;
+}
+
+.img-sello-footer {
+    max-width: 100px; /* 👈 Cambia este valor para ajustar el tamaño general (ej: 80px, 100px, 120px) */
+    height: auto;
+    object-fit: contain;
+}
+
+/* TAMAÑO PARA MÓVILES */
+@media (max-width: 600px) {
+    .img-sello-footer {
+        max-width: 80px; /* 👈 Tamaño aún más reducido en pantallas móviles */
+    }
+}
 
 /* BOTÓN FLOTANTE DE WHATSAPP */
 .whatsapp-float {
