@@ -45,7 +45,7 @@ a { color: inherit; }
     padding: 12px 20px;
     border-radius: 8px;
     text-decoration: none;
-    font-family: 'Fredoka', sans-serif;
+    font-family: 'Familjen Grotesk', sans-serif;
     font-weight: 700;
     letter-spacing: 0.5px;
     transition: top 0.2s ease;
@@ -73,7 +73,7 @@ h1, h2, h3 { text-transform: uppercase; }
 .font-nunito-important { font-family: 'Nunito', sans-serif !important; }
 
 .eyebrow {
-    font-family: 'Fredoka', sans-serif;
+    font-family: 'Familjen Grotesk', sans-serif;
     font-size: 0.8rem;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -570,7 +570,7 @@ nav a:focus-visible::after { width: 100%; }
 
 .header-producto { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
 .header-producto h3 { margin: 0; font-size: 1.2rem; color: var(--black-leather); letter-spacing: 0.5px; }
-.precio-producto { font-family: 'Fredoka', sans-serif; font-weight: 700; color: var(--cg-red); font-size: 1.2rem; white-space: nowrap; }
+.precio-producto { font-family: 'Familjen Grotesk', sans-serif; font-weight: 700; color: var(--cg-red); font-size: 1.2rem; white-space: nowrap; }
 
 .descripcion-producto {
     font-family: 'Nunito', sans-serif;
@@ -642,7 +642,7 @@ nav a:focus-visible::after { width: 100%; }
 }
 
 .resena-autor {
-    font-family: 'Fredoka', sans-serif;
+    font-family: 'Familjen Grotesk', sans-serif;
     font-weight: 700;
     color: var(--cg-red);
     font-size: 0.9rem;
@@ -783,7 +783,7 @@ details {
 
 details:hover { background-color: #f7ede3; }
 
-summary { font-family: 'Fredoka', sans-serif; font-size: 1.05rem; font-weight: bold; letter-spacing: 0.5px; outline: none; }
+summary { font-family: 'Familjen Grotesk', sans-serif; font-size: 1.05rem; font-weight: bold; letter-spacing: 0.5px; outline: none; }
 details p { margin-top: 15px; margin-bottom: 0; font-size: 1rem; color: var(--black-olive); line-height: 1.6; }
 details p strong { color: var(--cg-red); }
 
@@ -812,7 +812,7 @@ footer {
 }
 
 .footer-col h4 {
-    font-family: 'Fredoka', sans-serif;
+    font-family: 'Familjen Grotesk', sans-serif;
     color: var(--carrot-orange);
     letter-spacing: 2px;
     font-size: 0.9rem;
@@ -879,7 +879,7 @@ footer {
     background: var(--cg-red);
     color: white;
     font-size: 13px;
-    font-family: 'Fredoka', sans-serif;
+    font-family: 'Familjen Grotesk', sans-serif;
     font-weight: bold;
     width: 24px;
     height: 24px;
@@ -997,7 +997,7 @@ footer {
 }
 .carrito-total {
     font-size: 1.4rem;
-    font-family: 'Fredoka', sans-serif;
+    font-family: 'Familjen Grotesk', sans-serif;
     font-weight: bold;
     color: var(--black-olive);
     margin-bottom: 15px;
