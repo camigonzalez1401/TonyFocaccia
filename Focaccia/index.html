@@ -4,18 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TONY | Focaccias de Autor — MCBO, VZLA</title>
-    <meta name="description" content="Focaccias de autor artesanales en Maracaibo. Consulta zonas de entrega, horarios, ingredientes y alérgenos antes de escribirnos.">
+    <meta name="description" content="Focaccias de autor artesanales en Maracaibo. Consulta el menú completo, zonas de entrega, horarios, ingredientes y alérgenos antes de escribirnos.">
     <link rel="icon" href="IMG_4110.PNG" type="image/png">
 
-    <!-- Tipografías -->
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-    <!-- Icono WhatsApp-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body id="top"></body>
+<body id="top">
 
     <header>
         <div class="logo">
@@ -26,136 +25,79 @@
         </button>
         <nav id="navPrincipal">
             <a href="#top">Inicio</a>
-            <a href="#menu">Favoritos</a>
+            <a href="#resenas">Reseñas</a>
+            <a href="#productos">Menú</a>
             <a href="#delivery">Delivery y Horarios</a>
-            <a href="#productos">Productos</a>
             <a href="#faq">FAQ</a>
-            <a href="https://wa.me/+584221747343?text=¡Hola!%20Quiero%20ordenar%20una%20focaccia%20de%20TONY%20🍕" class="nav-cta" target="_blank" rel="noopener noreferrer">Pide tu focaccia</a>
+            <!-- Botón cambiado para abrir el carrito -->
+            <button class="nav-cta" onclick="abrirCarrito()" style="border:none; cursor:pointer; font-family: inherit;">
+                <i class="fa-solid fa-cart-shopping"></i> Carrito (<span class="cart-count-badge" style="position:static; display:inline-block; width:auto; height:auto; background:transparent; padding:0; box-shadow:none; box-shadow: none;">0</span>)
+            </button>
         </nav>
     </header>
 
     <div class="hero-container">
         <section class="hero">
             <div class="hero-text">
-                <span class="accent-font" style="color: var(--carrot-orange);">Cocina de Autor</span>
+                <span class="accent-font">Cocina de autor</span>
                 <h1>Fuera de lo ordinario.</h1>
                 <p>Hacemos cada componente de nuestras focaccias nosotros mismos. No es solo pan, es una obra de arte culinaria diseñada para sorprenderte.</p>
                 <div class="hero-badges">
-                    <span class="hero-badge"><i class="fa-solid fa-clock"></i> Horarios y zonas abajo</span>
                     <span class="hero-badge"><i class="fa-solid fa-wheat-awn"></i> Ingredientes y alérgenos por producto</span>
+                    <span class="hero-badge"><i class="fa-solid fa-clock"></i> Horarios y zonas de entrega abajo</span>
                 </div>
                 <div class="btn-row">
-                    <a href="#productos" class="btn">VER MENÚ COMPLETO</a>
-                    <a href="#delivery" class="btn btn-outline">ZONAS Y HORARIOS</a>
+                    <a href="#productos" class="btn">Ver menú completo</a>
+                    <a href="#delivery" class="btn btn-outline">Zonas y horarios</a>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- la pinche cintica infinita -->
+    <!-- cinta infinita -->
     <div class="cinta-wrapper">
         <div class="cinta-infinita">
             <div class="cinta-track">
                 <div class="cinta-contenido">
-                    &nbsp;&nbsp;100% ARTESANAL &nbsp;•&nbsp; HECHO EN CASA &nbsp;•&nbsp; INGREDIENTES FRESCOS &nbsp;•&nbsp; HORNEADO DIARIO &nbsp;•&nbsp; CRUJIENTE POR FUERA &nbsp;•&nbsp; SUAVE POR DENTRO &nbsp;•&nbsp; SABOR REAL &nbsp;•&nbsp; PIDE TU FOCACCIA YA! &nbsp;•&nbsp; BON APPETIT!
+                    100% artesanal &nbsp;<span class="cinta-punto">•</span>&nbsp; Hecho en casa &nbsp;<span class="cinta-punto">•</span>&nbsp; Ingredientes frescos &nbsp;<span class="cinta-punto">•</span>&nbsp; Horneado diario &nbsp;<span class="cinta-punto">•</span>&nbsp; Crujiente por fuera &nbsp;<span class="cinta-punto">•</span>&nbsp; Suave por dentro &nbsp;<span class="cinta-punto">•</span>&nbsp; Sabor real &nbsp;<span class="cinta-punto">•</span>&nbsp; Pide tu focaccia ya &nbsp;<span class="cinta-punto">•</span>&nbsp; Bon appétit
                 </div>
-                <div class="cinta-contenido">
-                    &nbsp;&nbsp;100% ARTESANAL &nbsp;•&nbsp; HECHO EN CASA &nbsp;•&nbsp; INGREDIENTES FRESCOS &nbsp;•&nbsp; HORNEADO DIARIO &nbsp;•&nbsp; CRUJIENTE POR FUERA &nbsp;•&nbsp; SUAVE POR DENTRO &nbsp;•&nbsp; SABOR REAL &nbsp;•&nbsp; PIDE TU FOCACCIA YA! &nbsp;•&nbsp; BON APPETIT!
+                <div class="cinta-contenido" aria-hidden="true">
+                    100% artesanal &nbsp;<span class="cinta-punto">•</span>&nbsp; Hecho en casa &nbsp;<span class="cinta-punto">•</span>&nbsp; Ingredientes frescos &nbsp;<span class="cinta-punto">•</span>&nbsp; Horneado diario &nbsp;<span class="cinta-punto">•</span>&nbsp; Crujiente por fuera &nbsp;<span class="cinta-punto">•</span>&nbsp; Suave por dentro &nbsp;<span class="cinta-punto">•</span>&nbsp; Sabor real &nbsp;<span class="cinta-punto">•</span>&nbsp; Pide tu focaccia ya &nbsp;<span class="cinta-punto">•</span>&nbsp; Bon appétit
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- manifiesto -->
     <section class="manifiesto">
-        <span class="eyebrow" style="color: var(--chinese-blue);">Nuestro Propósito</span>
-        <p class="lead">Tony es un restaurante artesanal que busca traer el sabor de Italia a cada persona. Creado con pasión y dedicación, nuestro pan es elaborado con cuidado, respetando su tiempo específico para que mantenga ese aspecto crocante al morderlo. <span class="accent-font" style="font-size:1.6rem;">Donde el pan se convierte en arte.</span></p>
+        <div class="recuadro-info">
+            <span class="etiqueta-superior">Nuestro propósito</span>
+            <p class="lead">Tony es un restaurante artesanal que busca traer el sabor de Italia a cada persona. Creado con pasión y dedicación, nuestro pan es elaborado con cuidado, respetando su tiempo específico para que mantenga ese aspecto crocante al morderlo.</p>
+        </div>
+        
         <div class="valores-pills">
             <span class="valor-pill">Artesanales</span>
             <span class="valor-pill">Auténticos</span>
             <span class="valor-pill">Pasionales</span>
             <span class="valor-pill">Calidad</span>
         </div>
-    </section>
 
-    <!-- las focachichas estrella estan aqui -->
-    <section id="menu" class="menu-estrellas">
-
-        <img src="champinones.png" alt="" class="floating-ingredient fl-1">
-        <img src="nuecestostadas.png" alt="" class="floating-ingredient fl-2">
-        <img src="pimentonrostizado.png" alt="" class="floating-ingredient fl-3">
-        <img src="champinones.png" alt="" class="floating-ingredient fl-4">
-
-        <h2 class="font-nunito-important">Nuestras Focaccias Estrella</h2>
-        <p>Las favoritas de la casa, elaboradas con ingredientes frescos y recetas únicas.</p>
-        <div class="cards-container">
-
-            <!--(atras)-->
-            <div class="card">
-                <img src="stracciatella.png" alt="Focaccia Stracciatella">
-                <h3>Stracciatella</h3>
-                <p>Nuestra creación más cremosa y solicitada.</p>
+        <div class="manifiesto-firma-container">
+            <div class="manifiesto-firma">
+                <i class="fa-solid fa-heart"></i>
+                <span class="accent-font">Donde el pan se convierte en arte</span>
+                <i class="fa-solid fa-heart"></i>
             </div>
-
-            <!--(adelante)-->
-            <div class="card central">
-                <img src="pina picante.png" alt="Focaccia Piña Picante">
-                <h3 style="color: var(--chinese-blue);">Piña Picante</h3>
-                <p>Para los atrevidos. Un toque dulce y vibrante.</p>
-            </div>
-
-            <!--(atras)-->
-            <div class="card">
-                <img src="pesto rosso.png" alt="Focaccia Pesto Rosso">
-                <h3 style="color: var(--champagne-pink);">Pesto Rosso</h3>
-                <p>El sabor profundo de Italia con nuestro pesto rojo.</p>
-            </div>
-
         </div>
     </section>
 
-    <!-- aqui esta el delivery HUMBERTO -->
-    <section id="delivery" class="seccion-delivery">
-        <span class="eyebrow" style="display:block; text-align:center; color: var(--carrot-orange);">Antes de escribirnos</span>
-        <h2>Dónde y Cuándo</h2>
-        <p class="section-intro" style="color: var(--champagne-pink); opacity: 0.85;">Revisa aquí si tu zona tiene cobertura y nuestro horario de atención, para pedir sin vueltas.</p>
-
-        <div class="delivery-grid">
-            <div class="delivery-card">
-                <h3><i class="fa-solid fa-clock"></i> Horario de Atención</h3>
-                <table class="horario-tabla">
-                    <tr><td>Lunes a Viernes</td><td>[12:00 p.m. – 11:00 p.m.]</td></tr>
-                    <tr><td>Sábado</td><td>[12:00 p.m. – 11:00 p.m.]</td></tr>
-                    <tr><td>Domingo</td><td>[12:00 p.m. – 11:00 p.m.]</td></tr>
-                    <tr><td>Pick-up en tienda</td><td>Mismo horario</td></tr>
-                </table>
-                <p class="delivery-nota">Los pedidos se preparan al momento; el tiempo estimado de entrega es de [30–45 min] según la zona.</p>
-            </div>
-
-            <div class="delivery-card">
-                <h3><i class="fa-solid fa-location-dot"></i> Zonas de Entrega — MCBO</h3>
-                <div class="zonas-lista">
-                    <span class="zona-chip">[Zona Norte]</span>
-                    <span class="zona-chip">[Zona Este]</span>
-                    <span class="zona-chip">[Centro]</span>
-                    <span class="zona-chip">[Zona Sur]</span>
-                    <span class="zona-chip">[Milagro Norte]</span>
-                    <span class="zona-chip">+ más</span>
-                </div>
-                <p class="delivery-nota">Hacemos delivery en Maracaibo. Escríbenos y confirmamos cobertura y costo de envío.</p>
-            </div>
-        </div>
-
-        <div class="delivery-cta">
-            <a href="https://wa.me/+584221747343?text=¡Hola!%20Quiero%20confirmar%20si%20hacen%20entregas%20a%20mi%20zona" class="btn" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-whatsapp"></i> Haz tu pedido para casa
-            </a>
-        </div>
-    </section>
-
-    <!-- Y AQUI ESTA EL MENU COMPLETO-->
+    <!-- menú completo -->
     <section id="productos" class="seccion-productos">
-        <h2>Menú Completo</h2>
-        <p class="section-intro">Cada focaccia indica sus alérgenos principales. Elaboramos todo de forma artesanal en una misma cocina.</p>
+        <div class="recuadro-info">
+            <span class="etiqueta-superior">Todo lo que horneamos</span>
+            <h2>Menú completo</h2>
+            <p class="section-intro">Cada focaccia indica sus alérgenos principales. Elaboramos todo de forma artesanal en una misma cocina.</p>
+        </div>
 
         <div class="leyenda-alergenos">
             <span class="leyenda-item">
@@ -173,12 +115,12 @@
         </div>
 
         <div class="grid-productos">
-
             <!-- Foca 1 -->
             <div class="cuadro-producto">
-                <div class="imagen-producto"><img src="Straciatella-menu.JPG" alt="Stracciatella Rostizada"></div>
+                <span class="badge-card">★ CREMOSA</span>
+                <div class="imagen-producto"><img src="Straciatella-menu.JPG" alt="Stracciatella Rostizada" loading="lazy"></div>
                 <div class="header-producto">
-                    <h3>Focaccia Stracciatella</h3>
+                    <h3>Stracciatella</h3>
                     <span class="precio-producto">$10.50</span>
                 </div>
                 <p class="descripcion-producto">Una esponjosa focaccia de 100% biga rellena de pollo ahumado, stracciatella, pimentones rostizados y queso mozzarella. Una exquisitez ahumada!</p>
@@ -186,27 +128,35 @@
                     <span class="ico-badge" title="Contiene gluten"><svg viewBox="0 0 24 24"><path d="M12 2c0 4-3 4-3 8s3 4 3 8M9 6c0 2-2 2-2 5M15 6c0 2 2 2 2 5" stroke-linecap="round"/></svg></span>
                     <span class="ico-badge" title="Contiene lácteos"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 5 7 5 10a5 5 0 0 1-10 0c0-3 2-6 5-10z" stroke-linejoin="round"/></svg></span>
                 </div>
+                <button class="btn btn-add-cart" onclick="agregarAlCarrito('Stracciatella', 10.50)">
+                    <i class="fa-solid fa-cart-plus"></i> Añadir al carrito
+                </button>
             </div>
 
             <!-- Foca 2 -->
             <div class="cuadro-producto">
-                <div class="imagen-producto"><img src="PinaPicante-menu.JPG" alt="Piña Picante"></div>
+                <span class="badge-card">★ MÁS VENDIDA</span>
+                <div class="imagen-producto"><img src="PinaPicante-menu.JPG" alt="Piña Picante" loading="lazy"></div>
                 <div class="header-producto">
-                    <h3>Focaccia Piña Picante</h3>
+                 <h3>Piña Picante</h3>
                     <span class="precio-producto">$10.50</span>
                 </div>
-                <p class="descripcion-producto">Una explosión agridulce balanceada: lomo de cerdo ahumado, mermelada de pina con un toque picante y queso mozzarella.</p>
+                <p class="descripcion-producto">Una explosión agridulce balanceada: lomo de cerdo ahumado, mermelada de piña con un toque picante y queso mozzarella.</p>
                 <div class="badges-alergenos">
                     <span class="ico-badge" title="Contiene gluten"><svg viewBox="0 0 24 24"><path d="M12 2c0 4-3 4-3 8s3 4 3 8M9 6c0 2-2 2-2 5M15 6c0 2 2 2 2 5" stroke-linecap="round"/></svg></span>
                     <span class="ico-badge" title="Contiene lácteos"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 5 7 5 10a5 5 0 0 1-10 0c0-3 2-6 5-10z" stroke-linejoin="round"/></svg></span>
                 </div>
+                <button class="btn btn-add-cart" onclick="agregarAlCarrito('Piña Picante', 10.50)">
+                    <i class="fa-solid fa-cart-plus"></i> Añadir al carrito
+                </button>
             </div>
 
             <!-- Foca 3 -->
             <div class="cuadro-producto">
-                <div class="imagen-producto"><img src="PestoRosso-Menu.JPG" alt="Pesto Rosso"></div>
+                <span class="badge-card">★ TRADICIONAL</span>
+                <div class="imagen-producto"><img src="PestoRosso-Menu.JPG" alt="Pesto Rosso" loading="lazy"></div>
                 <div class="header-producto">
-                    <h3>Focaccia Pesto Rosso</h3>
+                    <h3>Pesto Rosso</h3>
                     <span class="precio-producto">$10.50</span>
                 </div>
                 <p class="descripcion-producto">Cargada de tradición con nuestro pesto a base de tomates secos, rellena de lomo de cerdo ahumado, y queso mozzarella.</p>
@@ -214,11 +164,14 @@
                     <span class="ico-badge" title="Contiene gluten"><svg viewBox="0 0 24 24"><path d="M12 2c0 4-3 4-3 8s3 4 3 8M9 6c0 2-2 2-2 5M15 6c0 2 2 2 2 5" stroke-linecap="round"/></svg></span>
                     <span class="ico-badge" title="Contiene lácteos"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 5 7 5 10a5 5 0 0 1-10 0c0-3 2-6 5-10z" stroke-linejoin="round"/></svg></span>
                 </div>
+                <button class="btn btn-add-cart" onclick="agregarAlCarrito('Pesto Rosso', 10.50)">
+                    <i class="fa-solid fa-cart-plus"></i> Añadir al carrito
+                </button>
             </div>
 
             <!-- Foca 4 -->
             <div class="cuadro-producto">
-                <div class="imagen-producto"><img src="ChampinonesYHierbas.PNG" alt="Focaccia de Champiñones Y Hierbas"></div>
+                <div class="imagen-producto"><img src="ChampinonesYHierbas.PNG" alt="Focaccia de Champiñones Y Hierbas" loading="lazy"></div>
                 <div class="header-producto">
                     <h3>Champiñones Y Hierbas</h3>
                     <span class="precio-producto">$10.50</span>
@@ -228,54 +181,153 @@
                     <span class="ico-badge" title="Contiene gluten"><svg viewBox="0 0 24 24"><path d="M12 2c0 4-3 4-3 8s3 4 3 8M9 6c0 2-2 2-2 5M15 6c0 2 2 2 2 5" stroke-linecap="round"/></svg></span>
                     <span class="ico-badge" title="Contiene lácteos"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 5 7 5 10a5 5 0 0 1-10 0c0-3 2-6 5-10z" stroke-linejoin="round"/></svg></span>
                 </div>
+                <button class="btn btn-add-cart" onclick="agregarAlCarrito('Champiñones Y Hierbas', 10.50)">
+                    <i class="fa-solid fa-cart-plus"></i> Añadir al carrito
+                </button>
             </div>
 
             <!-- Foca 5 -->
             <div class="cuadro-producto">
-                <div class="imagen-producto"><img src="RelishDeVino-menu.PNG" alt="Focaccia Relish De Vino"></div>
+                <div class="imagen-producto"><img src="RelishDeVino-menu.PNG" alt="Focaccia Relish De Vino" loading="lazy"></div>
                 <div class="header-producto">
                     <h3>Relish De Vino</h3>
                     <span class="precio-producto">$10.50</span>
                 </div>
-                <p class="descripcion-producto">Una focaccia de 100% biga rellena de pastrami, relish de vino tinto y queso mozzarella. Exotica, esponjosa y deliciosa!</p>
+                <p class="descripcion-producto">Una focaccia de 100% biga rellena de pastrami, relish de vino tinto y queso mozzarella. Exótica, esponjosa y deliciosa!</p>
                 <div class="badges-alergenos">
                     <span class="ico-badge" title="Contiene gluten"><svg viewBox="0 0 24 24"><path d="M12 2c0 4-3 4-3 8s3 4 3 8M9 6c0 2-2 2-2 5M15 6c0 2 2 2 2 5" stroke-linecap="round"/></svg></span>
                     <span class="ico-badge" title="Contiene lácteos"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 5 7 5 10a5 5 0 0 1-10 0c0-3 2-6 5-10z" stroke-linejoin="round"/></svg></span>
                 </div>
+                <button class="btn btn-add-cart" onclick="agregarAlCarrito('Relish De Vino', 10.50)">
+                    <i class="fa-solid fa-cart-plus"></i> Añadir al carrito
+                </button>
             </div>
 
             <!-- Foca 6 -->
             <div class="cuadro-producto">
-                <div class="imagen-producto"><img src="KetchupDePimenton-menu.PNG" alt="Focaccia Ketchup De Pimenton"></div>
+                <div class="imagen-producto"><img src="KetchupDePimenton-menu.PNG" alt="Focaccia Ketchup De Pimenton" loading="lazy"></div>
                 <div class="header-producto">
                     <h3>Ketchup De Pimentón</h3>
                     <span class="precio-producto">$10.50</span>
                 </div>
-                <p class="descripcion-producto">Una focaccia de 100% biga rellena de pollo ahumado, ketchup de pimenton, nueces tostadas y queso mozarella.</p>
+                <p class="descripcion-producto">Una focaccia de 100% biga rellena de pollo ahumado, ketchup de pimentón, nueces tostadas y queso mozzarella.</p>
                 <div class="badges-alergenos">
                     <span class="ico-badge" title="Contiene gluten"><svg viewBox="0 0 24 24"><path d="M12 2c0 4-3 4-3 8s3 4 3 8M9 6c0 2-2 2-2 5M15 6c0 2 2 2 2 5" stroke-linecap="round"/></svg></span>
                     <span class="ico-badge" title="Contiene lácteos"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 5 7 5 10a5 5 0 0 1-10 0c0-3 2-6 5-10z" stroke-linejoin="round"/></svg></span>
                     <span class="ico-badge" title="Contiene frutos secos"><svg viewBox="0 0 24 24"><circle cx="12" cy="14" r="6"/><path d="M12 8V4M9 4h6" stroke-linecap="round"/></svg></span>
                 </div>
+                <button class="btn btn-add-cart" onclick="agregarAlCarrito('Ketchup De Pimentón', 10.50)">
+                    <i class="fa-solid fa-cart-plus"></i> Añadir al carrito
+                </button>
             </div>
-
         </div>
     </section>
 
-    <!-- pregunticas -->
-    <section id="faq" class="faq-section">
-        <h2>Resolvemos tus Dudas</h2>
-        <p class="section-intro">Antes de escribirnos, es probable que tu pregunta ya esté respondida aquí.</p>
+    <!-- reseñas -->
+    <section id="resenas" class="seccion-resenas">
+        <div class="recuadro-info">
+            <span class="etiqueta-superior">Lo que dicen de nosotros</span>
+            <h2>Reseñas de nuestros clientes</h2>
+            <p class="section-intro">La opinión de quienes ya probaron nuestras focaccias.</p>
+        </div>
 
+        <div class="resenas-grid">
+            <div class="resena-card">
+                <div class="resena-estrellas">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="resena-texto">La Piña Picante rompe todos los esquemas, ese contraste dulce y picante quedó perfecto. Pedimos delivery a Zona Norte y llegó calientita en menos de 40 minutos.</p>
+                <span class="resena-autor">— María Fernanda G.</span>
+            </div>
+
+            <div class="resena-card">
+                <div class="resena-estrellas">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="resena-texto">Se nota que hacen todo artesanal, la masa queda crujiente por fuera y súper suave por dentro. La Stracciatella es mi favorita, pido siempre pick-up en la Avenida Universidad.</p>
+                <span class="resena-autor">— Carlos Andrés R.</span>
+            </div>
+
+            <div class="resena-card">
+                <div class="resena-estrellas">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="resena-texto">Probamos el Pesto Rosso para una reunión familiar y no quedó ni una miga. El sabor a Italia se siente de verdad, ya es nuestro pedido fijo cada fin de semana.</p>
+                <span class="resena-autor">— Valentina P.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- delivery y horarios -->
+    <section id="delivery" class="seccion-delivery">
+        <div class="recuadro-info">
+            <span class="etiqueta-superior">Antes de escribirnos</span>
+            <h2>Dónde y cuándo</h2>
+            <p class="section-intro">Revisa aquí si tu zona tiene cobertura y nuestro horario de atención, para pedir sin vueltas.</p>
+        </div>
+
+        <div class="delivery-grid">
+            <div class="delivery-card">
+                <h3><i class="fa-solid fa-clock"></i> Horario de atención</h3>
+                <table class="horario-tabla">
+                    <tr><td>Lunes a Viernes</td><td>12:00 p.m. – 11:00 p.m.</td></tr>
+                    <tr><td>Sábado</td><td>12:00 p.m. – 11:00 p.m.</td></tr>
+                    <tr><td>Domingo</td><td>12:00 p.m. – 11:00 p.m.</td></tr>
+                    <tr><td>Pick-up en tienda</td><td>Mismo horario</td></tr>
+                </table>
+                <p class="delivery-nota">Los pedidos se preparan al momento; el tiempo estimado de entrega es de 30–45 min según la zona.</p>
+            </div>
+
+            <div class="delivery-card">
+                <h3><i class="fa-solid fa-location-dot"></i> Zonas de entrega — MCBO</h3>
+                <div class="zonas-lista">
+                    <span class="zona-chip">Zona Norte</span>
+                    <span class="zona-chip">Zona Este</span>
+                    <span class="zona-chip">Centro</span>
+                    <span class="zona-chip">Zona Sur</span>
+                    <span class="zona-chip">Milagro Norte</span>
+                    <span class="zona-chip zona-chip-mas">+ más</span>
+                </div>
+                <p class="delivery-nota">Hacemos delivery en Maracaibo. Escríbenos y confirmamos cobertura y costo de envío.</p>
+            </div>
+        </div>
+
+        <div class="delivery-mapa">
+            <h3><i class="fa-solid fa-map-location-dot"></i> Ubicación para pick-up</h3>
+            <iframe
+                src="https://www.google.com/maps?q=tonyfoccacia,+Maracaibo,+Venezuela&output=embed"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Ubicación de pick-up TONY Focaccias en Maracaibo">
+            </iframe>
+        </div>
+
+        <div class="delivery-cta">
+            <a href="https://wa.me/+584221747343?text=¡Hola!%20Quiero%20confirmar%20si%20hacen%20entregas%20a%20mi%20zona" class="btn" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-whatsapp"></i> Haz tu pedido para casa
+            </a>
+        </div>
+    </section>
+
+    <!-- preguntas frecuentes -->
+    <section id="faq" class="faq-section">
+        <div class="recuadro-info">
+            <span class="etiqueta-superior">¿Tienes dudas?</span>
+            <h2>Resolvemos tus dudas</h2>
+            <p class="section-intro">Antes de escribirnos, es probable que tu pregunta ya esté respondida aquí.</p>
+        </div>
+
+        <div class="faq-grid">
         <div class="faq-categoria">
-            <h3>Pedidos y Delivery</h3>
+            <h3>Pedidos y delivery</h3>
             <details>
                 <summary>¿Cuáles son las zonas de entrega y horarios?</summary>
-                <p>Hacemos envíos en Maracaibo. Trabajamos de <strong>[Lunes a Domingo]</strong> en el horario de <strong>[12:00 p.m. a 9:00 p.m.]</strong>. Revisa la lista completa de zonas en la sección <a href="#delivery" style="color: var(--chinese-blue); font-weight: 700;">Delivery y Horarios</a> más arriba, o consúltanos si tu zona tiene cobertura.</p>
+                <p>Hacemos envíos en Maracaibo. Trabajamos de <strong>Lunes a Domingo</strong> en el horario de <strong>12:00 p.m. a 11:00 p.m.</strong> Revisa la lista completa de zonas en la sección <a href="#delivery">Delivery y Horarios</a> más arriba, o consúltanos si tu zona tiene cobertura.</p>
             </details>
             <details>
                 <summary>¿Cuánto tiempo tarda mi pedido en llegar?</summary>
-                <p>El tiempo estimado es de <strong>[30 a 45 minutos]</strong> desde que se confirma el pedido, dependiendo de tu zona y del volumen de pedidos del día.</p>
+                <p>El tiempo estimado es de <strong>30 a 45 minutos</strong> desde que se confirma el pedido, dependiendo de tu zona y del volumen de pedidos del día.</p>
             </details>
             <details>
                 <summary>¿Dónde puedo recoger mi pedido (Pick-up)?</summary>
@@ -283,19 +335,19 @@
             </details>
             <details>
                 <summary>¿Qué métodos de pago aceptan?</summary>
-                <p>Aceptamos <strong>[Pago móvil, efectivo y transferencia]</strong>. Indícanos tu método preferido al confirmar el pedido.</p>
+                <p>Aceptamos <strong>pago móvil, efectivo y transferencia</strong>. Indícanos tu método preferido al confirmar el pedido.</p>
             </details>
         </div>
 
         <div class="faq-categoria">
-            <h3>Ingredientes y Alérgenos</h3>
+            <h3>Ingredientes y alérgenos</h3>
             <details>
                 <summary>¿Tienen información sobre ingredientes y alérgenos?</summary>
-                <p>Sí. Al ser cocina de autor, preparamos nosotros mismos la mayoría de nuestros ingredientes. Usamos harinas de trigo <strong>(gluten)</strong>, lácteos y frutos secos (en nuestros pestos y toppings). Cada focaccia en el <a href="#productos" style="color: var(--chinese-blue); font-weight: 700;">Menú Completo</a> tiene sus alérgenos señalados con íconos.</p>
+                <p>Sí. Al ser cocina de autor, preparamos nosotros mismos la mayoría de nuestros ingredientes. Usamos harinas de trigo <strong>(gluten)</strong>, lácteos y frutos secos (en nuestros pestos y toppings). Cada focaccia en el <a href="#productos">Menú Completo</a> tiene sus alérgenos señalados con íconos.</p>
             </details>
             <details>
                 <summary>¿Manejan cocina libre de alérgenos o zonas separadas?</summary>
-                <p>No contamos con zonas de preparacion 100% aisladas, pero nos tomamos muy en serio tus restricciones alimentarias. Si tienes una alergia severa, coméntanoslo antes de ordenar</p>
+                <p>No contamos con zonas de preparación 100% aisladas, pero nos tomamos muy en serio tus restricciones alimentarias. Si tienes una alergia severa, coméntanoslo antes de ordenar.</p>
             </details>
             <details>
                 <summary>¿Tienen opciones sin gluten o veganas?</summary>
@@ -304,7 +356,7 @@
         </div>
 
         <div class="faq-categoria">
-            <h3>Sobre las Focaccias</h3>
+            <h3>Sobre las focaccias</h3>
             <details>
                 <summary>¿De qué tamaño son las focaccias y para cuántas personas rinden?</summary>
                 <p>Nuestras focaccias tienen una medida estándar de <strong>15x12cm</strong>. Son ideales para compartir entre <strong>2</strong> personas o para una comida abundante individual.</p>
@@ -314,17 +366,32 @@
                 <p>Nuestras recetas están pensadas como creaciones cerradas para mantener el balance de sabor. Si tienes una restricción alimentaria puntual, contáctanos y vemos qué se puede ajustar.</p>
             </details>
         </div>
-
-        <div class="faq-cta">
-            <p>¿Tu duda no está aquí?</p>
-            <a href="https://wa.me/+584221747343?text=¡Hola!%20Tengo%20una%20pregunta%20que%20no%20está%20en%20las%20FAQ" class="btn" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-whatsapp"></i> Escríbenos por WhatsApp
-            </a>
         </div>
     </section>
 
-    <footer>
+    <!-- ESTRUCTURA DEL CARRITO -->
+    <div id="carrito-overlay" class="carrito-overlay" onclick="cerrarCarrito()"></div>
+    <div id="carrito-sidebar" class="carrito-sidebar">
+        <div class="carrito-header">
+            <h2>Tu Pedido</h2>
+            <button id="cerrar-carrito" onclick="cerrarCarrito()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="carrito-items" class="carrito-items">
+            <!-- Los items del carrito se inyectan aquí -->
+            <p style="text-align:center; margin-top:20px; color:gray;">Tu carrito está vacío.</p>
+        </div>
+        <div class="carrito-footer">
+            <div class="carrito-total">
+                <span>Total:</span>
+                <span>$<span id="carrito-total-precio">0.00</span></span>
+            </div>
+            <button class="btn btn-whatsapp-order" onclick="enviarOrdenWhatsApp()">
+                <i class="fa-brands fa-whatsapp"></i> Ordenar por WhatsApp
+            </button>
+        </div>
+    </div>
 
+    <footer>
         <div class="footer-grid">
             <div class="footer-col">
                 <h4>Ubicación</h4>
@@ -332,13 +399,13 @@
             </div>
             <div class="footer-col">
                 <h4>Horario</h4>
-                <p>Lun – Vie: [12:00 p.m. – 11:00 p.m.]<br>Sáb – Dom: [12:00 p.m. – 11:00 p.m.]</p>
+                <p>Lun – Vie: 12:00 p.m. – 11:00 p.m.<br>Sáb – Dom: 12:00 p.m. – 11:00 p.m.</p>
             </div>
             <div class="footer-col">
                 <h4>Síguenos</h4>
                 <div class="footer-social">
-                    <a href="https://www.instagram.com/tonyfocaccias" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://wa.me/+584221747343" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/tonyfocaccias" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/+584221747343" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
@@ -353,13 +420,19 @@
         </p>
     </footer>
 
-    <!-- Botón WhatsApp -->
-    <a href="https://wa.me/+584221747343?text=¡Hola!%20Quiero%20ordenar%20una%20focaccia%20de%20TONY%20🍕" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <!-- Botón flotante para WhatsApp (Dudas generales) -->
+    <a href="https://wa.me/+584221747343?text=¡Hola!%20Tengo%20una%20duda%20sobre%20TONY%20" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- telefonis-->
+    <!-- Botón flotante del Carrito -->
+    <button class="carrito-float" onclick="abrirCarrito()" aria-label="Abrir carrito">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-count-badge">0</span>
+    </button>
+
     <script>
+        // Lógica del menú móvil
         const navToggle = document.getElementById('navToggle');
         const navPrincipal = document.getElementById('navPrincipal');
 
@@ -378,7 +451,106 @@
                 navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
             });
         });
-    </script>
 
+        const header = document.querySelector('header');
+        const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+
+        // LÓGICA DEL CARRITO DE COMPRAS
+        let carrito = [];
+
+        function actualizarUI() {
+            const itemsContainer = document.getElementById('carrito-items');
+            const totalPrecioDOM = document.getElementById('carrito-total-precio');
+            const badges = document.querySelectorAll('.cart-count-badge');
+            
+            itemsContainer.innerHTML = '';
+            let total = 0;
+            let cantidadTotal = 0;
+
+            if (carrito.length === 0) {
+                itemsContainer.innerHTML = '<p style="text-align:center; margin-top:20px; color:gray;">Tu carrito está vacío.</p>';
+            } else {
+                carrito.forEach((item, index) => {
+                    let subtotal = item.precio * item.cantidad;
+                    total += subtotal;
+                    cantidadTotal += item.cantidad;
+
+                    itemsContainer.innerHTML += `
+                        <div class="cart-item">
+                            <div class="cart-item-info">
+                                <h4>${item.nombre}</h4>
+                                <span style="color:var(--cg-red); font-weight:bold;">$${item.precio.toFixed(2)}</span>
+                            </div>
+                            <div class="cart-item-controls">
+                                <button class="btn-qty" onclick="cambiarCantidad(${index}, -1)">-</button>
+                                <span>${item.cantidad}</span>
+                                <button class="btn-qty" onclick="cambiarCantidad(${index}, 1)">+</button>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+
+            // Actualizar total monetario y contadores visuales
+            totalPrecioDOM.textContent = total.toFixed(2);
+            badges.forEach(badge => { badge.textContent = cantidadTotal; });
+        }
+
+        function agregarAlCarrito(nombre, precio) {
+            const itemExistente = carrito.find(item => item.nombre === nombre);
+            if (itemExistente) {
+                itemExistente.cantidad++;
+            } else {
+                carrito.push({ nombre, precio, cantidad: 1 });
+            }
+            actualizarUI();
+            abrirCarrito();
+        }
+
+        function cambiarCantidad(index, cambio) {
+            carrito[index].cantidad += cambio;
+            if (carrito[index].cantidad <= 0) {
+                carrito.splice(index, 1); // Elimina el producto si la cantidad llega a 0
+            }
+            actualizarUI();
+        }
+
+        function abrirCarrito() {
+            document.getElementById('carrito-sidebar').classList.add('activo');
+            document.getElementById('carrito-overlay').classList.add('activo');
+        }
+
+        function cerrarCarrito() {
+            document.getElementById('carrito-sidebar').classList.remove('activo');
+            document.getElementById('carrito-overlay').classList.remove('activo');
+        }
+
+        // Lógica de WhatsApp
+        function enviarOrdenWhatsApp() {
+            if (carrito.length === 0) {
+                alert('¡Tu carrito está vacío! Agrega algunas focaccias primero.');
+                return;
+            }
+            
+            let mensaje = "¡Hola! Quiero ordenar lo siguiente de TONY:\n\n";
+            let total = 0;
+            
+            carrito.forEach(item => {
+                let subtotal = item.precio * item.cantidad;
+                total += subtotal;
+                mensaje += `- ${item.cantidad}x ${item.nombre} ($${subtotal.toFixed(2)})\n`;
+            });
+            
+            mensaje += `\n*Total estimado: $${total.toFixed(2)}*\n\nPor favor, confírmame el pedido, métodos de pago y opciones de delivery/pick-up.`;
+            
+            // Número de WhatsApp basado en el existente
+            const numeroTel = "584221747343";
+            const url = `https://wa.me/${numeroTel}?text=${encodeURIComponent(mensaje)}`;
+            
+            window.open(url, '_blank');
+        }
+    </script>
 </body>
 </html>
